@@ -1,4 +1,3 @@
-import "./App.css";
 import { gql, useQuery } from "@apollo/client";
 
 const pokeQuery = gql`
@@ -13,7 +12,7 @@ const pokeQuery = gql`
   }
 `;
 
-function App() {
+function Homepage() {
   const { loading, error, data } = useQuery(pokeQuery);
 
   if (loading) return "Loading...";
@@ -31,4 +30,4 @@ function App() {
   );
 }
 
-export default App;
+export default Homepage;
