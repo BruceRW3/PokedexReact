@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { gql, useQuery } from "@apollo/client";
+import { Link } from "react-router-dom";
 
 const pokemonDetail = gql`
   query samplePokeAPIquery($PokemonID: Int!) {
@@ -32,7 +33,16 @@ function PokemonDetail() {
   if (loading) return null;
   if (error) return `Error! ${error}`;
 
-  return <p>{data.gen3_species[0].name}</p>;
+  const species = data.gen3_species[0];
+  return (
+    <>
+      <p>{species.name}</p>
+      <p>{species.pokemon_v2_pokemonspeciesflavortexts[0].flavor_text}</p>
+      <p>
+        <Link to={`/`}>Back</Link>
+      </p>
+    </>
+  );
 }
 
 export default PokemonDetail;
