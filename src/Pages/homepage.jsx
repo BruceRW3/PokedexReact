@@ -2,7 +2,7 @@ import { gql, useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
 
 const pokeQuery = gql`
-  query samplePokeAPIquery {
+  query pokemonQuery {
     gen3_species: pokemon_v2_pokemonspecies(
       where: { pokemon_v2_generation: { name: {} } }
       order_by: { id: asc }
