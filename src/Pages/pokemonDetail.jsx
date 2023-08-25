@@ -38,6 +38,9 @@ function PokemonDetail() {
     <>
       <p>{species.name}</p>
       <p>{species.pokemon_v2_pokemonspeciesflavortexts[0].flavor_text}</p>
+      <img
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${species.id}.png`}
+      />
       <p>
         <Link to={`/`}>Back</Link>
       </p>
