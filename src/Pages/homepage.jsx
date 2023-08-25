@@ -1,7 +1,8 @@
 import { gql, useQuery } from "@apollo/client";
+import { Link } from "react-router-dom";
 
 const pokeQuery = gql`
-  query samplePokeAPIquery {
+  query pokemonQuery {
     gen3_species: pokemon_v2_pokemonspecies(
       where: { pokemon_v2_generation: { name: {} } }
       order_by: { id: asc }
@@ -23,7 +24,7 @@ function Homepage() {
       <li>Pokemon</li>
       {data.gen3_species.map((species) => (
         <li key={species.id} value={species.name}>
-          {species.name}
+          <Link to={`/pokemon/${species.id}`}>{species.name}</Link>
         </li>
       ))}
     </>
