@@ -25,7 +25,7 @@ const pokemonDetail = gql`
 `;
 
 function PokemonDetail() {
-  let { id } = useParams();
+  const { id } = useParams();
   const { loading, error, data } = useQuery(pokemonDetail, {
     variables: { PokemonID: id },
   });
